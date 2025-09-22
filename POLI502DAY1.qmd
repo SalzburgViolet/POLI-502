@@ -1,0 +1,38 @@
+---
+title: "POLI502Part1"
+author: "Jack Poppens"
+format: html
+editor: visual
+---
+
+## Part 1
+
+print(4*(30+6))\^0.5*
+
+*print(4*30+6)\^0.5
+
+print(X1 \<- 73)
+
+print(X2 \<- 99+38)
+
+print(X3\<-X1\*X2)
+
+print((X3-1)\^0.25)
+
+print(part.1 \<- 30+6)
+
+print(part.2 \<- 4 \* part.1)
+
+print(part.2\^0.5)
+
+print(class(c("POLI 502")))
+
+print(class(as.factor(c(1,2,3))))
+
+print(c(1,2,3,NA))
+
+print(which(is.na(c(1,2,3,NA))))
+
+print(c(1,2,3,NaN))
+
+print(which(is.na(c(1,2,3,NaN))))\
