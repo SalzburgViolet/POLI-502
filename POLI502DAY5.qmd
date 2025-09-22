@@ -6,61 +6,62 @@ editor: visual
 
 ## PART 5
 
-myPath \<- "C:/Users/jackp/Downloads"
+myPath <- "C:/Users/jackp/Downloads"
 
 setwd(myPath)
 
 world.data = read.csv("world.csv")
 
-women.dem \<- world.data\[ is.na(world.data \$ women09) == FALSE & is.na(world.data \$ democ_regime) == FALSE, \]
+women.dem <- world.data [ is.na(world.data $ women09) == FALSE & is.na(world.data $ democ_regime) == FALSE, ]
 
-summary(world.data \$ women09)
+summary(world.data $ women09)
 
-summary (world.data \$ democ_regime)
+summary (world.data $ democ_regime)
 
-women.dem \$ dem.dum \<- factor(women.dem \$ democ_regime,
+women.dem $ dem.dum <- factor(women.dem $ democ_regime,
 
 levels = c("Yes", "No"),
 
-\
+
 labels = c("Democracy", "Autocracy"))
 
 rm(world.data)
 
-summary(women.dem \$ women09)
+summary(women.dem $ women09)
 
 Min. 1st Qu. Median Mean 3rd Qu. Max. 1
 
 0.00 9.85 15.55 17.23 22.73 56.30
 
-g \<- ggplot(women.dem, aes(x = women09)) + geom_histogram(bins = 30)
+g <- ggplot(women.dem, aes(x = women09)) + geom_histogram(bins = 30)
 
-g \<- g + theme(axis.text.x = element_text(size = 14))
+g <- g + theme(axis.text.x = element_text(size = 14))
 
-g \<- g + xlab("Percentage women in congress") + ylab ("Number of countries")
+g <- g + xlab("Percentage women in congress") + ylab ("Number of countries")
 
-table(women.dem \$ dem.dum) Democracy Autocracy
+table(women.dem $ dem.dum) Democracy Autocracy
 
 111 67
 
-g \<- ggplot(women.dem, aes(x = dem.dum)) + geom_bar()
+g <- ggplot(women.dem, aes(x = dem.dum)) + geom_bar()
 
-g \<- g + theme(axis.text.x = element_text(size = 15))
+g <- g + theme(axis.text.x = element_text(size = 15))
 
-g \<- g + xlab("Regime type") + ylab("Number of countries")
+g <- g + xlab("Regime type") + ylab("Number of countries")
 
-g \<- ggplot(women.dem, aes(x = women09)) + geom_histogram()
+g <- ggplot(women.dem, aes(x = women09)) + geom_histogram()
 
-g \<- g + xlab("Percentage women in congress") + ylab("Number of countries")
+g <- g + xlab("Percentage women in congress") + ylab("Number of countries")
 
-g \<- g + facet_grid(dem.dum \~ .) g
+g <- g + facet_grid(dem.dum ~ .) g
 
-g \<- ggplot(women.dem, aes(y = women09, x = dem.dum))
+g <- ggplot(women.dem, aes(y = women09, x = dem.dum))
 
-g \<- g + geom_boxplot()
+g <- g + geom_boxplot()
 
-g \<- g + theme(axis.text.x = element_text(size = 14))
+g <- g + theme(axis.text.x = element_text(size = 14))
 
-g \<- g + xlab("Regime type") + ylab("Percentage women in congress")
+g <- g + xlab("Regime type") + ylab("Percentage women in congress")
 
 g
+
